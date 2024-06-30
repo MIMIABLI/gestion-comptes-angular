@@ -1,0 +1,101 @@
+<nav class="navbar bg-dark">
+<div class="container">
+  <h2>Angular CRUD</h2>
+</div>
+<div class="d-flex">
+  <button class="btn btn-success"data-bs-toggle="modal"data-bs-target="#exempleModal">Add Notes</button>
+</div>
+</nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div style="background-color: yellowgreen;"class="modal-header">
+        <h5 style="color: white;" class="modal-title" id="exampleModalLabel">ADD NOTES</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form formGroup="noteform">
+          <div class="form-group mb-2">
+            <label for="exampleInputIs">Id</label>
+              <input type="number" class="formcontrol" id="exampleid" placeholder="number"/>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Note</label>
+              <input type="number" class="formcontrol" formControlName="number" placeholder="number"/>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Nom</label>
+              <input type="text" class="formcontrol" formControlName="name" placeholder="name"/>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Date A Jout</label>
+              <input type="date" class="formcontrol" formControlName="dateAjout" placeholder="date"/>
+              <span class="text-danger" >la saisie est obligatoire</span>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Date de Modification</label>
+              <input type="date" class="formcontrol" formControlName="dateModification" placeholder="date"/>
+              <span class="text-danger" >la saisie est obligatoire</span>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Contenu</label>
+              <input type="text" class="formcontrol" formControlName="contenu" placeholder="contenu"/>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputIs">Description</label>
+              <input type="text" class="formcontrol" formControlName="description" placeholder="description"/>
+          </div>
+        </form>
+      </div>
+      <div style="background-color: yellowgreen;"class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        <button (click)="addNotes()"[disabled]="this.noteform.invalid" type="button" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Note</th>
+        <th scope="col">Date ajout</th>
+        <th scope="col">Date de modification</th>
+        <th scope="col">Contenu</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of notes">
+       
+        <td>{{item.id}}</td>
+        <td>{{item.note}}</td>
+        <td>{{item.dateAjout}}</td>
+        <td>{{item.dateModification}}</td>
+        <td>{{item.contenu}}</td>
+        <td>{{item.description}}</td>
+        <td>
+        <button (click)="addNotes" class="btn btn-warning">Edit</button>&nbsp;
+        <button (click)="delete()" class="btn btn-danger">Delete</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

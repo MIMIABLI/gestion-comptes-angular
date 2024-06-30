@@ -1,0 +1,89 @@
+<nav class="navbar bg-dark">
+    <div class="container">
+      <h2>Angular CRUD</h2>
+    </div>
+    <div class="d-flex">
+      <button class="btn btn-success"data-bs-toggle="modal"data-bs-target="#exempleModal">Add Utilisateurs</button>
+    </div>
+    </nav>
+    
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div style="background-color: blue;"class="modal-header">
+            <h5 style="color: white;" class="modal-title" id="exampleModalLabel">ADD UTILISATEUR</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form formGroup="noteform">
+              <div class="form-group mb-2">
+                <label for="exampleInputIs">Id</label>
+                  <input type="number" class="formcontrol" id="exampleid" placeholder="number"/>
+              </div>
+    
+              <div class="form-group">
+                <label for="exampleInputIs">Nom</label>
+                  <input type="text" class="formcontrol" formControlName="name" placeholder="name"/>
+              </div>
+    
+              <div class="form-group">
+                <label for="exampleInputIs">Prenom</label>
+                  <input type="text" class="formcontrol" formControlLastname="Lastname" placeholder="Lastname"/>
+              </div>
+    
+    
+              <div class="form-group">
+                <label for="exampleInputIs">Login</label>
+                  <input type="number" class="formcontrol" formControlLogin="login" placeholder="login"/>
+              </div>
+    
+              <div class="form-group">
+                <label for="exampleInputIs">password</label>
+                  <input type="number" class="formcontrol" formControlPassword="password" placeholder="password"/>
+              </div>
+            </form>
+          </div>
+          <div style="background-color: blue;"class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+            <button (click)="add()"  type="button" class="btn btn-primary">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container-fluid mt-3">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Login</th>
+            <th scope="col">Password</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of utilisateurs">
+           
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.password}}</td>
+            <td>
+                <button (click)="add()" class="btn btn-warning">Edit</button>
+                <button (click)="delete()" class="btn btn-danger">Delete</button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+    

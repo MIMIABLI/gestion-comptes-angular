@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+       <div class="col-md-6">
+        <div class="card">
+            <div class="text-center">
+                <h1>Sign up</h1>
+                <h6>Register Yourself!!</h6>  
+            </div>
+            <form>
+                <form [formGroup] =" signupForm" (ngSubmit)="signup">
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Nom</label>
+                    <input  formControlName="name"type="text" class="form-control" id="exampleInputName" aria-describedby="NameHelp"/>
+                    
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Prenom</label>
+                    <input  formControlName="prenom" type="text" class="form-control" id="exampleInputEmail" aria-describedby="prenomHelp"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputDateDeNaissance" class="form-label">date de nassance</label>
+                    <input  formControlName="dateBirth" type="text" class="form-control" id="exampleInputDateDeNaissance" aria-describedby="prenomHelp"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Email adress</label>
+                    <input   formControlName="email"type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"/>
+                    <div id="emailHelp" class="form-text">merci de renseigner votre email</div>
+                </div> 
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Verification email</label>
+                    <input  formControlName="email"type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp"/>
+                    <div id="emailHelp" class="form-text">merci de verifier votre email</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Password</label>
+                    <input  formControlName="password"type="password" class="form-control" id="exampleInputEmail" aria-describedby="passwordHelp"/>
+                    <div id="passwordHelp" class="form-text">merci de renseigner votre mail</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPasword" class="form-label">Verification password</label>
+                    <input  formControlName="password"type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"/>
+                    <div id="emailHelp" class="form-text">merci de verifier votre password</div>
+                </div>   
+                <div class="mb-3">
+                    <label for="exampleInputPasword" class="form-label">Mot Primaire</label>
+                    <input  formControlName="password"type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp"/>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>                                  
+                 <button type="button" class="btn btn-primary mb-2">Sign up</button>
+                 </div>
+                 <a style="color: #fff; margin-top: 10px;" routerLink="/login" >Already register? Click to login!!</a>
+                  </form>
+                </form>
+            </div>
+         </div>
+     </div>
+ </div>
+                
+                    
+                
+                
+           
+    
